@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -13,13 +14,13 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Inbox',
-      url: '/folder/Inbox',
-      icon: 'mail'
+      title: 'Registro',
+      url: '/folder/usuario',
+      icon: 'person'
     },
     {
-      title: 'Outbox',
-      url: '/folder/Outbox',
+      title: 'login',
+      url: '/folder/login',
       icon: 'paper-plane'
     },
     {
