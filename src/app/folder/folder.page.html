@@ -45,61 +45,18 @@
 
     <ion-item>
       <ion-label>Fecha de Nacimiento</ion-label>
-      <ion-datetime displayFormat="MM DD YYYY" placeholder="Select Date" ></ion-datetime>
+      <ion-datetime displayFormat="MM DD, YYYY" placeholder="Select Date" name="user.fecha" [(ngModel)]="fecha"></ion-datetime>
     </ion-item>
 
-    <ion-item>
-      <ion-label >Masculino</ion-label>
-      <ion-checkbox name="user.genero"></ion-checkbox>
-      <ion-label >Femenino</ion-label>
-      <ion-checkbox name="user.genero"></ion-checkbox>
-
-
-    </ion-item>
-
+  <ion-item class="item-input item-select">
+      <span class="input-label">Sexo</span>
+      <select  name="user.sexo" [(ngModel)]="sexo">
+          <option selected>Hombre</option>
+          <option>Mujer</option>
+      </select>
+  </ion-item>
+  <ion-button type="submit" >Registrar Nuevo Usuario</ion-button>
   </form>
-
 </div>
 
-<!--
-<div id="listaUS" *ngIf="folder=='usuario'">
-  <form (ngSubmit)="agregar_usuario()">
-    <ion-title>Registro de nuevo usuario</ion-title>
-    <ion-item>
-      <ion-label>Nombre</ion-label>
-      <ion-input name="user.nombre" [(ngModel)]="nombre" type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-    <ion-label>Apellido</ion-label>
-    <ion-input name="user.apellido" [(ngModel)]="apellido" type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Correo Electrónico</ion-label>
-      <ion-input name="user.email" [(ngModel)]="email" type="email"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Date</ion-label>
-      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
-    </ion-item>
-
-    <ion-item>
-      <label for="gender">Género</label><br />
-      <input name="gender" type="radio" ng-model="user.gender" value="male" />Masculino
-      <input name="gender" type="radio" ng-model="user.gender" value="female" />Femenino
-    </ion-item>
-
-      <label for="gender" >Género</label><br />
-      <input name="gender" type="radio" ng-model="user.gender" value="male" />Masculino
-      <input name="gender" type="radio" ng-model="user.gender" value="female" />Femenino
-
-
-
-
-    <ion-button type="submit">Registrar Nuevo Usuario</ion-button>
-  </form>
-</div>  
--->  
 </ion-content>

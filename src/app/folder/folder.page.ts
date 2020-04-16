@@ -11,11 +11,12 @@ import { Storage } from '@ionic/storage';
 })
 export class FolderPage implements OnInit {
   public folder: string;
-  public nombre;
   public username;
-  public email;
-  public myDate;
+  public nombre;
   public apellido;
+  public email;
+  public fecha;
+  public sexo;
 
 
 
@@ -30,22 +31,28 @@ export class FolderPage implements OnInit {
   }
 
   agregar_usuario(){
-    console.log(this.nombre+" "+this.apellido+" " +this.email+" "+this.myDate+" ");
+    console.log(this.nombre+" "+ this.apellido+" "+this.email+" "+ this.fecha+" "+this.sexo);
     this.storage.set('nombre',this.nombre).then(
-      ()=>{
-        this.storage.set('email',this.email).then(
-          ()=>{
-            this.storage.set('password',this.myDate).finally(
-              ()=>{
-                console.log("Guardado realizado");
+      ()=>{              
+        this.storage.set('apellido',this.apellido).then(
+          ()=>{              
+            this.storage.set('email',this.email).then(
+              ()=>{ 
+                this.storage.set('fecha',this.fecha).then(
+                  ()=>{ 
+                    this.storage.set('sexo',this.sexo).finally(
+                      ()=>{ 
+                        console.log("Guardado realizado");
+                      }
+                    );
+                  }
+                );
               }
             );
           }
         );
       }
     );
-
-    
   }
 
 
